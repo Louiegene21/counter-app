@@ -1,27 +1,25 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme } from '@mui/material';
+import type { PaletteMode } from '@mui/material';
 
-const theme = createTheme({
-  palette: {
-    mode: 'light', // or 'dark'
-    primary: {
-      main: '#1976d2', // blue
+export const getTheme = (mode: PaletteMode) =>
+  createTheme({
+    palette: {
+      mode,
+      primary: {
+        main: '#1976d2',
+      },
+      secondary: {
+        main: '#9c27b0',
+      },
+      background: {
+        default: mode === 'light' ? '#f5f5f5' : '#121212',
+        paper: mode === 'light' ? '#fff' : '#1e1e1e',
+      },
     },
-    secondary: {
-      main: '#9c27b0', // purple
+    typography: {
+      fontFamily: 'Roboto, sans-serif',
+      button: {
+        textTransform: 'none',
+      },
     },
-    background: {
-      default: '#f5f5f5',
-    },
-  },
-  typography: {
-    fontFamily: 'Roboto, sans-serif',
-    h4: {
-      fontWeight: 600,
-    },
-    button: {
-      textTransform: 'none', // disables UPPERCASE
-    },
-  },
-});
-
-export default theme;
+  });

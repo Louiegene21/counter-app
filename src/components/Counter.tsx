@@ -1,5 +1,5 @@
-
-import { useState } from 'react';import { Box, Button, Typography, Stack } from '@mui/material';
+import { useState } from 'react';
+import { Box, Button, Typography, Stack, Paper } from '@mui/material';
 
 const Counter = () => {
   const [count, setCount] = useState<number>(0);
@@ -9,21 +9,37 @@ const Counter = () => {
   const reset = () => setCount(0);
 
   return (
-    <Box textAlign="center" mt={5}>
-      <Typography variant="h4" gutterBottom>
-        Counter: {count}
-      </Typography>
-      <Stack direction="row" spacing={2} justifyContent="center">
-        <Button variant="contained" color="primary" onClick={increment}>
-          Increment
-        </Button>
-        <Button variant="contained" color="secondary" onClick={decrement}>
-          Decrement
-        </Button>
-        <Button variant="outlined" onClick={reset}>
-          Reset
-        </Button>
-      </Stack>
+    <Box
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      minHeight="100vh"
+      bgcolor="background.default"
+    >
+      <Paper
+        elevation={4}
+        sx={{
+          p: 4,
+          borderRadius: 2,
+          textAlign: 'center',
+          minWidth: 300,
+        }}
+      >
+        <Typography variant="h4" gutterBottom>
+          Counter: {count}
+        </Typography>
+        <Stack direction="row" spacing={2} justifyContent="center">
+          <Button variant="contained" color="primary" onClick={increment}>
+            Increment
+          </Button>
+          <Button variant="contained" color="secondary" onClick={decrement}>
+            Decrement
+          </Button>
+          <Button variant="outlined" onClick={reset}>
+            Reset
+          </Button>
+        </Stack>
+      </Paper>
     </Box>
   );
 };

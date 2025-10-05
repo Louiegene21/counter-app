@@ -1,10 +1,18 @@
-// src/App.tsx
+import { Container, Box } from '@mui/material';
 import Counter from './components/Counter';
-import { Container } from '@mui/material';
+import ThemeToggle from './components/ThemeToggle';
 
-function App() {
+type AppProps = {
+  toggleTheme: () => void;
+  mode: 'light' | 'dark';
+};
+
+function App({ toggleTheme, mode }: AppProps) {
   return (
     <Container>
+      <Box display="flex" justifyContent="flex-end" pt={2}>
+        <ThemeToggle toggleTheme={toggleTheme} mode={mode} />
+      </Box>
       <Counter />
     </Container>
   );
