@@ -13,7 +13,7 @@ function App({ toggleTheme, mode }: AppProps) {
       <Box display="flex" justifyContent="flex-end" pt={2}>
         <ThemeToggle toggleTheme={toggleTheme} mode={mode} />
       </Box>
-      <Counter />
+      <Counter mode={mode} />
     </Container>
   );
 }
