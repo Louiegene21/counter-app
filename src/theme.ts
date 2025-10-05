@@ -17,7 +17,7 @@ export const getTheme = (mode: PaletteMode) =>
       },
     },
     typography: {
-      fontFamily: 'Roboto, sans-serif',
+      fontFamily: "'Poppins', sans-serif",
       button: {
         textTransform: 'none',
       },
